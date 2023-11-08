@@ -41,16 +41,10 @@ function colorReducer(
         nbColors: state.nbColors + 2,
       };
 
-    case 'CHANGE_DIRECTION_TO_270':
+    case 'CHANGE_DIRECTION':
       return {
         ...state,
-        direction: '270deg',
-      };
-
-    case 'CHANGE_DIRECTION_TO_90':
-      return {
-        ...state,
-        direction: '90deg',
+        direction: action.payload,
       };
 
     default:

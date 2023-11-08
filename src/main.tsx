@@ -93,29 +93,43 @@ document.getElementById('randLast')!.addEventListener('click', () => {
 });
 
 document.getElementById('to45deg')!.addEventListener('click', () => {
-  console.log('to45deg');
+  store.dispatch({
+    type: 'CHANGE_DIRECTION',
+    payload: '45deg',
+  });
 });
 
 document.getElementById('to135deg')!.addEventListener('click', () => {
-  console.log('to135deg');
+  store.dispatch({
+    type: 'CHANGE_DIRECTION',
+    payload: '135deg',
+  });
 });
 
 document.getElementById('to225deg')!.addEventListener('click', () => {
-  console.log('to225deg');
+  store.dispatch({
+    type: 'CHANGE_DIRECTION',
+    payload: '225deg',
+  });
 });
 
 document.getElementById('to315deg')!.addEventListener('click', () => {
-  console.log('to315deg');
+  store.dispatch({
+    type: 'CHANGE_DIRECTION',
+    payload: '315deg',
+  });
 });
 
 document.getElementById('to90deg')!.addEventListener('click', () => {
   store.dispatch({
-    type: 'CHANGE_DIRECTION_TO_90',
+    type: 'CHANGE_DIRECTION',
+    payload: '90deg',
   });
 });
 
 document.getElementById('to270deg')!.addEventListener('click', () => {
   store.dispatch({
-    type: 'CHANGE_DIRECTION_TO_270',
+    type: 'CHANGE_DIRECTION',
+    payload: '270deg',
   });
 });
