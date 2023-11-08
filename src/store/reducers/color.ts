@@ -1,5 +1,5 @@
 import { PayloadAction, createSlice } from '@reduxjs/toolkit';
-import { AppState, TColor } from '../../@types';
+import { AppState, TColor, TDirection } from '../../@types';
 
 const initialState: AppState = {
   firstColor: '#F0F',
@@ -29,11 +29,27 @@ const colorSlice = createSlice({
       state.lastColor = action.payload;
       state.nbColors += 1;
     },
+    changeAllColors(
+      state,
+      action: PayloadAction<{ firstColor: TColor; lastColor: TColor }>
+    ) {
+      state.lastColor = action.payload.lastColor;
+      state.firstColor = action.payload.firstColor;
+      state.nbColors += 2;
+    },
+    changeDirection(state, action: PayloadAction<TDirection>) {
+      state.direction = action.payload;
+    },
   },
 });
 
 // On récupère les actions générées par le slice depuis sa propriété `actions`
 // Et on les exportes pour pouvoir les utiliser dans notre application
-export const { changeFirstColor, changeLastColor } = colorSlice.actions;
+export const {
+  changeFirstColor,
+  changeLastColor,
+  changeAllColors,
+  changeDirection,
+} = colorSlice.actions;
 
 export default colorSlice;

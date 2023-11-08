@@ -4,7 +4,12 @@ import { randomHexColor, generateSpanColor } from './utils/color';
 import { AppState } from './@types';
 
 import './styles/index.scss';
-import { changeFirstColor, changeLastColor } from './store/reducers/color';
+import {
+  changeAllColors,
+  changeDirection,
+  changeFirstColor,
+  changeLastColor,
+} from './store/reducers/color';
 
 // Pour récupérer les données stocker dans mon store, je vais faire un store.getState()
 console.log(store.getState());
@@ -68,13 +73,12 @@ store.subscribe(() => {
 
 // == Controls
 document.getElementById('randAll')!.addEventListener('click', () => {
-  store.dispatch({
-    type: 'CHANGE_ALL_COLORS',
-    payload: {
+  store.dispatch(
+    changeAllColors({
       firstColor: randomHexColor(),
       lastColor: randomHexColor(),
-    },
-  });
+    })
+  );
 });
 
 document.getElementById('randFirst')!.addEventListener('click', () => {
@@ -95,43 +99,25 @@ document.getElementById('randLast')!.addEventListener('click', () => {
 });
 
 document.getElementById('to45deg')!.addEventListener('click', () => {
-  store.dispatch({
-    type: 'CHANGE_DIRECTION',
-    payload: '45deg',
-  });
+  store.dispatch(changeDirection('45deg'));
 });
 
 document.getElementById('to135deg')!.addEventListener('click', () => {
-  store.dispatch({
-    type: 'CHANGE_DIRECTION',
-    payload: '135deg',
-  });
+  store.dispatch(changeDirection('135deg'));
 });
 
 document.getElementById('to225deg')!.addEventListener('click', () => {
-  store.dispatch({
-    type: 'CHANGE_DIRECTION',
-    payload: '225deg',
-  });
+  store.dispatch(changeDirection('225deg'));
 });
 
 document.getElementById('to315deg')!.addEventListener('click', () => {
-  store.dispatch({
-    type: 'CHANGE_DIRECTION',
-    payload: '315deg',
-  });
+  store.dispatch(changeDirection('315deg'));
 });
 
 document.getElementById('to90deg')!.addEventListener('click', () => {
-  store.dispatch({
-    type: 'CHANGE_DIRECTION',
-    payload: '90deg',
-  });
+  store.dispatch(changeDirection('90deg'));
 });
 
 document.getElementById('to270deg')!.addEventListener('click', () => {
-  store.dispatch({
-    type: 'CHANGE_DIRECTION',
-    payload: '270deg',
-  });
+  store.dispatch(changeDirection('270deg'));
 });
