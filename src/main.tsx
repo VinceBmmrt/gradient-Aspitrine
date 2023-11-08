@@ -92,14 +92,30 @@ document.getElementById('randLast')!.addEventListener('click', () => {
   });
 });
 
-document.getElementById('toLeft')!.addEventListener('click', () => {
+document.getElementById('to45deg')!.addEventListener('click', () => {
+  console.log('to45deg');
+});
+
+document.getElementById('to135deg')!.addEventListener('click', () => {
+  console.log('to135deg');
+});
+
+document.getElementById('to225deg')!.addEventListener('click', () => {
+  console.log('to225deg');
+});
+
+document.getElementById('to315deg')!.addEventListener('click', () => {
+  console.log('to315deg');
+});
+
+document.getElementById('to90deg')!.addEventListener('click', () => {
   store.dispatch({
-    type: 'CHANGE_DIRECTION_TO_270',
+    type: 'CHANGE_DIRECTION_TO_90',
   });
 });
 
-document.getElementById('toRight')!.addEventListener('click', () => {
+document.getElementById('to270deg')!.addEventListener('click', () => {
   store.dispatch({
-    type: 'CHANGE_DIRECTION_TO_90',
+    type: 'CHANGE_DIRECTION_TO_270',
   });
 });
